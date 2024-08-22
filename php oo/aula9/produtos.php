@@ -111,3 +111,50 @@ print $produto1;
 $produto2 = new Produtos;
 solicitarDados($produto2);
 print $produto2;
+
+if ($produto0->getValorTotal() > $produto1->getValorTotal() && $produto0->getValorTotal() > $produto2->getValorTotal()) 
+{
+    produtoCaro($produto0);
+    if ($produto1->getValorTotal() > $produto2->getValorTotal()) 
+    {
+        produtoBarato($produto2);
+    }
+    else
+    {
+        produtoBarato($produto1);
+    }
+}
+elseif($produto1->getValorTotal() > $produto0->getValorTotal() && $produto1->getValorTotal() > $produto2->getValorTotal())
+{
+    produtoCaro($produto1);
+    if ($produto0->getValorTotal() > $produto2->getValorTotal()) 
+    {
+        produtoBarato($produto2);
+    }
+    else
+    {
+        produtoBarato($produto0);
+    }
+}
+else
+{
+    produtoCaro($produto2);
+    if ($produto0->getValorTotal() > $produto1->getValorTotal()) 
+    {
+        produtoBarato($produto1);
+    }
+    else
+    {
+        produtoBarato($produto0);
+    }
+}
+
+function produtoCaro($var)
+{
+    print "O produto mais caro é: " . $var->getDescricao() . " " .  $var->getUnidadeMedida() . " com valor de ". $var->__toString();
+}
+
+function produtoBarato($var)
+{
+    print "O produto mais barato é: " . $var->getDescricao() .  " ". $var->getUnidadeMedida() . " com valor de ". $var->__toString();
+}
