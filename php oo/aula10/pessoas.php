@@ -49,10 +49,10 @@ $escolha = 0;
 $cadastro = array();
 
 do {
-    print "\n   --------- MENU ----------- \n";
-    print " 1 -------- CADASTRE-SE ------ \n";
-    print " 2 -------- LISTAR --------- \n";
-    print " 0 -------- SAIR ----------- \n";
+    print "\n   MENU \n";
+    print " 1 CADASTRE-SE \n";
+    print " 2 LISTA\n";
+    print " 0 SAIR\n";
 
     $escolha = readline("De qual serviço você necessita? ");
 
