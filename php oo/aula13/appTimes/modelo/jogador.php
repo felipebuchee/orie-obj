@@ -1,8 +1,12 @@
 <?php 
 
+require_once("time.php");
+
 class Jogador{
     private $nome;
     private $numero;
+
+    private Time $time;
 
     
 
@@ -38,6 +42,24 @@ class Jogador{
     public function setNumero($numero): self
     {
         $this->numero = $numero;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of time
+     */
+    public function getTime(): Time
+    {
+        return $this->time;
+    }
+
+    /**
+     * Set the value of time
+     */
+    public function setTime(Time $time): self
+    {
+        $this->time = $time;
 
         return $this;
     }

@@ -4,7 +4,7 @@ class Time{
     private $nome;
     private $cidade;
 
-    
+    private array $jogadores;
 
     /**
      * Get the value of nome
@@ -38,6 +38,24 @@ class Time{
     public function setCidade($cidade): self
     {
         $this->cidade = $cidade;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of jogadores
+     */
+    public function getJogadores(): array
+    {
+        return $this->jogadores;
+    }
+
+    /**
+     * Set the value of jogadores
+     */
+    public function setJogadores(array $jogadores): self
+    {
+        $this->jogadores = $jogadores;
 
         return $this;
     }
