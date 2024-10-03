@@ -53,7 +53,7 @@ do {
             print "CADASTRANDO PEDIDO!\n";
 
             foreach ($pratos as $i => $p) {
-                print ($i + 1) . "º " . $p->getNome() . "\n";
+                print ($i + 1) . " - " . $p->getNome() . "\n";
             }
 
             $pratoNumero = (int) readline("Quais os pratos pedidos? (digite o número do prato): \n");
