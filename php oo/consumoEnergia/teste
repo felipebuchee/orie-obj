@@ -1,0 +1,65 @@
+<?php 
+
+require_once('model/Soma.php');
+require_once('model/Subtracao.php');
+require_once('model/Multiplicacao.php');
+require_once('model/Divisao.php');
+require_once('model/Resto.php');
+
+do {
+    print "\n ⋇⊶⊰⊱⊷⋇ CALCULADORA BUCHIANA!!! ⋇⊶⊰⊱⊷⋇ \n";
+    print " 1 SOMAR \n";
+    print " 2 SUBTRAIR \n";
+    print " 3 MULTIPLICAR\n";
+    print " 4 DIVIDIR\n";
+    print " 5 RESTO\n";
+    print " 0 SAIR\n";
+
+    $escolha = (int) readline("Qual serviço deseja utilizar? " . "\n");
+
+    switch ($escolha) {
+
+        case 0:
+            print "ATÉ A PRÓXIMA";
+            break;
+
+        case 1:
+            $numA = (float) readline("Qual o primeiro valor? " . "\n");
+            $numB = (float) readline("Qual o segundo valor? " . "\n");
+            $soma = new Soma($numA, $numB);
+            print "Resultado: " . $soma->calcular() . "\n";
+            break;
+
+        case 2:
+            $numA = (float) readline("Qual o primeiro valor? " . "\n");
+            $numB = (float) readline("Qual o segundo valor? " . "\n");
+            $subtracao = new Subtracao($numA, $numB);
+            print "Resultado: " . $subtracao->calcular() . "\n";
+            break;
+
+        case 3:
+            $numA = (float) readline("Qual o primeiro valor? " . "\n");
+            $numB = (float) readline("Qual o segundo valor? " . "\n");
+            $multiplicacao = new Multiplicacao($numA, $numB);
+            print "Resultado: " . $multiplicacao->calcular() . "\n";
+            break;
+
+        case 4:
+            $numA = (float) readline("Qual o primeiro valor? " . "\n");
+            $numB = (float) readline("Qual o segundo valor? " . "\n");
+            $divisao = new Divisao($numA, $numB);
+            print "Resultado: " . $divisao->calcular() . "\n";
+            break;
+
+        case 5:
+            $numA = (float) readline("Qual o primeiro valor? " . "\n");
+            $numB = (float) readline("Qual o segundo valor? " . "\n");
+            $resto = new Resto($numA, $numB);
+            print "Resultado: " . $resto->calcular() . "\n";
+            break;
+
+        default:
+            print "ALTERNATIVA INVÁLIDA!!\n";
+            break;
+    }
+} while ($escolha != 0);
